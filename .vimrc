@@ -1,7 +1,13 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+set clipboard=unnamed
+" size of a hard tabstop
+set tabstop=4
+" always uses spaces instead of tab characters
+set expandtab
+" size of an "indent"
+set shiftwidth=4
 
-" set the runtime path to include Vundle and initialize
+filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
@@ -30,3 +36,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
+
+nnoremap <F4> :YcmCompleter GoToInclude
+nnoremap <leader><C-g> :YcmCompleter GoToDefinition
