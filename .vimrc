@@ -1,17 +1,16 @@
 set nocompatible              " be iMproved, required
+set nowrap
 set clipboard=unnamed
-" size of a hard tabstop
 set tabstop=4
-" always uses spaces instead of tab characters
 set expandtab
-" size of an "indent"
 set shiftwidth=4
+
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
@@ -19,7 +18,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
-" All of your Plugins must be added before the following line
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
