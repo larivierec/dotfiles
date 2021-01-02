@@ -35,6 +35,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 nnoremap <F4> :YcmCompleter GoToInclude
 nnoremap <leader><C-g> :YcmCompleter GoToDefinition
