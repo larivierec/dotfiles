@@ -1,52 +1,59 @@
+syntax enable
+colorscheme peachpuff
 set nocompatible              " be iMproved, required
 set nowrap
 set clipboard=unnamed
-set tabstop=4
-set expandtab
+set backspace=indent,eol,start
+
+" Change how vim represents characters on the screen
+set encoding=utf-8
+
+" Set the encoding of files written
+set fileencoding=utf-8
+
+" Control all other files
 set shiftwidth=4
 
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+set undofile " Maintain undo history between sessions
+set undodir=~/.vim/undodir
 
-" c#
-let g:OmniSharp_server_type = 'roslyn' 
-let g:OmniSharp_prefer_global_sln = 1  
-let g:OmniSharp_timeout = 10    
+" Language-specific settings
+" ts - show existing tab with 4 spaces width
+" sw - when indenting with '>', use 4 spaces width
+" sts - control <tab> and <bs> keys to match tabstop
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
-" java
-let g:syntastic_java_checkers = []
-let g:EclimFileTypeValidate = 0
+filetype plugin indent on
 
-filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Golang
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
+au filetype go inoremap <buffer> . .<C-x><C-o>
 
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
-nnoremap <F4> :YcmCompleter GoToInclude
-nnoremap <leader><C-g> :YcmCompleter GoToDefinition
+" airline
+" air-line plugin specific commands
+let g:airline_powerline_fonts = 1
 
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'

@@ -116,4 +116,22 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=$PATH:~/software/cmake-3.11.0/bin
+# default kubeconfig
+FILES="$HOME/.kube/config"
+
+# create clusters directory if its not created
+CLUSTERS_DIR="$HOME/.kube/clusters"
+echo "creating clusters dir: $CLUSTERS_DIR"
+mkdir -p "$CLUSTERS_DIR"
+test CLUSTERS_DIR
+
+for cluster in `find $CLUSTERS_DIR -type f -name "*.yaml"`
+do
+  echo "found cluster: $cluster"
+  FILES="$cluster:$FILES"
+done
+
+export KUBECONFIG=$FILES
+
+export GPG_TTY=$(tty)
+export GO111MODULE="on"
