@@ -136,6 +136,22 @@ export KUBECONFIG=$FILES
 export GPG_TTY=$(tty)
 export GO111MODULE="on"
 
+function isWsl {
+    if [[ "$(</proc/sys/kernel/osrelease)" == *microsoft* ]]; then
+        return true
+    fi
+
+    return false
+}
+
+function git {
+    if isWsl; then
+        git.exe "$@"
+    else
+        /usr/bin/git "$@"
+    fi
+}
+
 parse_git_branch() {
         BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
         if [ ! "${BRANCH}" == "" ]
@@ -183,16 +199,20 @@ function parse_git_dirty {
 
 export GPG_TTY=$(tty)
 
+export GOPROXY=https://athens.stingray-tooling.com
+export GONOSUMDB=stingray.tools
 export DOCKER_BUILDKIT=1 # or configure in daemon.json
 export COMPOSE_DOCKER_CLI_BUILD=1
+export GOPATH=/home/clariviere/go
 
-alias kc=kubectl
+complete -F __start_kubectl k
+source <(kubectl completion bash)
+complete -o default -F __start_kubectl k
 
-complete -F __start_kubectl kc
 [[ "$(umask)" == '0000' ]] && umask 0022
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$GOPATH/bin:$PATH"
 
-source /home/garbinc/.kube_ps1.sh
+source $HOME/.kube_ps1.sh
 export PS1="\$(kube_ps1) \[\033[38;5;2m\]\w\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;3m\](\$(parse_git_branch))\[$(tput sgr0)\] \[\033[38;5;166m\]>\[$(tput sgr0)\] "
 

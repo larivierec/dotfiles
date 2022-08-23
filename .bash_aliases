@@ -3,4 +3,4 @@ gita(){
 	git status
 }
 alias gita='gita'
-alias kc='kubectl'
+alias k='kubectl'
