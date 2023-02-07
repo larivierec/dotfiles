@@ -85,6 +85,7 @@ source $HOME/.kube_ps1.sh
 source <(kubectl completion zsh)
 source <(helm completion zsh)
 source <(flux completion zsh)
+source <(atuin init zsh)
 
 PROMPT='$(kube_ps1)'$PROMPT
 # User configuration
@@ -141,3 +142,6 @@ export GONOSUMDB=stingray.tools
 export DOCKER_BUILDKIT=1 # or configure in daemon.json
 export COMPOSE_DOCKER_CLI_BUILD=1
 export GOPATH=$HOME/go
+
+export PATH=$PATH:$GOPATH
+export PATH=$PATH:$GOPATH/bin
