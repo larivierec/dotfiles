@@ -21,6 +21,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'sainnhe/everforest'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
@@ -31,7 +32,7 @@ call plug#end()
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
-filetype plugin indent on    " required
+filetype plugin indent on
 
 syntax enable
 set background=dark
@@ -49,8 +50,6 @@ colorscheme everforest
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
-filetype plugin indent on
 
 " Golang
 
