@@ -137,8 +137,6 @@ done
 
 export KUBECONFIG=$FILES
 
-export GOPROXY=https://athens.stingray-tooling.com
-export GONOSUMDB=stingray.tools
 export DOCKER_BUILDKIT=1 # or configure in daemon.json
 export COMPOSE_DOCKER_CLI_BUILD=1
 export GOPATH=$HOME/go

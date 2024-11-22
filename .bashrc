@@ -199,8 +199,6 @@ function parse_git_dirty {
 
 export GPG_TTY=$(tty)
 
-export GOPROXY=https://athens.stingray-tooling.com
-export GONOSUMDB=stingray.tools
 export DOCKER_BUILDKIT=1 # or configure in daemon.json
 export COMPOSE_DOCKER_CLI_BUILD=1
 export GOPATH=/home/clariviere/go
