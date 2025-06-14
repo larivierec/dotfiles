@@ -3,9 +3,9 @@
 ## Requirements
 
 1. mise
-2. 
+2. from this repo
 ```bash
-ln -s ~/.dotfiles/mise/.tool-versions ~/.tool-versions
+mise install
 ```
 
 ## Vim-Go
