@@ -72,20 +72,29 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    docker
     dotenv
     macos
     kube-ps1
     golang
+    terraform
     gpg-agent
     iterm2
+    mise
+    node
+    rust
 )
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.kube_ps1.sh
 source <(kubectl completion zsh)
+source <(talosctl completion zsh)
 source <(helm completion zsh)
 source <(flux completion zsh)
-source <(atuin init zsh)
+source <(podman completion zsh)
+source <(mise completion zsh)
+eval "$(atuin init zsh)"
+#source <(colima completion zsh)
+#source <(nerdctl completion zsh)
 
 PROMPT='$(kube_ps1)'$PROMPT
 # User configuration
@@ -119,6 +128,8 @@ function gita(){
 }
 alias gita='gita'
 alias k=kubectl
+alias docker=podman
+export -f docker
 
 # default kubeconfig
 FILES="$HOME/.kube/config"
@@ -135,11 +146,18 @@ do
   FILES="$cluster:$FILES"
 done
 
+export KIND_EXPERIMENTAL_PROVIDER=podman
+
 export KUBECONFIG=$FILES
 
 export DOCKER_BUILDKIT=1 # or configure in daemon.json
 export COMPOSE_DOCKER_CLI_BUILD=1
-export GOPATH=$HOME/go
 
-export PATH=$PATH:$GOPATH
-export PATH=$PATH:$GOPATH/bin
+export PATH="$HOME/.grit/bin/env:$PATH"
+export PATH="/usr/local/share/dotnet:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+. "$HOME/.grit/bin/env"
