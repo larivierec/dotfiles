@@ -131,26 +131,24 @@ alias k=kubectl
 alias docker=podman
 export -f docker
 
-# default kubeconfig
 FILES="$HOME/.kube/config"
-
-# create clusters directory if its not created
 CLUSTERS_DIR="$HOME/.kube/clusters"
 echo "creating clusters dir: $CLUSTERS_DIR"
 mkdir -p "$CLUSTERS_DIR"
-test CLUSTERS_DIR
 
-for cluster in `find $CLUSTERS_DIR -type f -name "*.yaml"`
+for cluster in `find $CLUSTERS_DIR -type f -name "*.yaml" 2>/dev/null`
 do
   echo "found cluster: $cluster"
-  FILES="$cluster:$FILES"
+  if [ -f "$cluster" ]; then
+    FILES="$cluster:$FILES"
+  fi
 done
-
-export KIND_EXPERIMENTAL_PROVIDER=podman
 
 export KUBECONFIG=$FILES
 
-export DOCKER_BUILDKIT=1 # or configure in daemon.json
+export KIND_EXPERIMENTAL_PROVIDER=podman
+
+export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 
 export PATH="$HOME/.grit/bin/env:$PATH"
