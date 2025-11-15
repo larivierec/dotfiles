@@ -5,7 +5,7 @@ nodejs = '24'
 python = '3.14.0'
 rust = '1.91.1'
 terraform = "1.13.5"
-kubectl = '1.34.1'
+kubectl = '1.34.2'
 "ubi:siderolabs/talos"= { version = "1.11", exe = "talosctl" }
 "ubi:budimanjojo/talhelper" = '3.0'
 node = "25"
