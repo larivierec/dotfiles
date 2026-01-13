@@ -7,5 +7,5 @@ rust = '1.92.0'
 terraform = "1.14.3"
 kubectl = '1.35.0'
 "github:siderolabs/talos"= { version = "1.12.0", bin = "talosctl", asset_pattern = "talosctl-darwin-arm64" }
-"github:budimanjojo/talhelper" = '3.0'
+"github:budimanjojo/talhelper" = '3.1'
 node = "25"
