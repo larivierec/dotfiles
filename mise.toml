@@ -1,11 +1,11 @@
 [tools]
 
-go = "1.25.7"
+go = "1.26.0"
 nodejs = '24'
 python = "3.14.3"
-rust = '1.93.0'
-terraform = "1.14.4"
-kubectl = '1.35.0'
+rust = "1.93.1"
+terraform = "1.14.5"
+kubectl = "1.35.1"
 kubectx = "latest"
 kubens = "latest"
 minikube = "latest"
@@ -14,8 +14,8 @@ helmfile = "latest"
 flux2 = "latest"
 k9s = "latest"
 "github:mitsuhiko/minijinja" = "latest"
-"github:siderolabs/talos"= { version = "1.12.2", bin = "talosctl", asset_pattern = "talosctl-darwin-arm64" }
-"github:budimanjojo/talhelper" = { version = "3.1.3", bin = "talhelper" }
+"github:siderolabs/talos"= { version = "1.12.4", bin = "talosctl", asset_pattern = "talosctl-darwin-arm64" }
+"github:budimanjojo/talhelper" = { version = "3.1.5", bin = "talhelper" }
 "github:score-spec/score-compose" = "latest"
 "github:score-spec/score-k8s" = "latest"
 node = "25"
