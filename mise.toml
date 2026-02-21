@@ -31,4 +31,5 @@ act = "latest"
 opentofu = "latest"
 restic = "latest"
 age = "latest"
+1password-cli = "latest"
 
