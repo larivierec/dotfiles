@@ -3,7 +3,7 @@
 go = "1.26.1"
 nodejs = '24'
 python = "3.14.3"
-rust = "1.94.0"
+rust = "1.94.1"
 terraform = "1.14.8"
 kubectl = "1.35.3"
 kubectx = "latest"
