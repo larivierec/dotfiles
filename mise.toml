@@ -15,7 +15,7 @@ flux2 = "latest"
 k9s = "latest"
 "github:mitsuhiko/minijinja" = "latest"
 "github:siderolabs/talos"= { version = "1.13.0", bin = "talosctl", asset_pattern = "talosctl-darwin-arm64" }
-"github:budimanjojo/talhelper" = { version = "3.1.9", bin = "talhelper" }
+"github:budimanjojo/talhelper" = { version = "3.1.10", bin = "talhelper" }
 "github:score-spec/score-compose" = "latest"
 "github:score-spec/score-k8s" = "latest"
 node = "26"
