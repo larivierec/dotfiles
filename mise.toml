@@ -14,7 +14,7 @@ helmfile = "latest"
 flux2 = "latest"
 k9s = "latest"
 "github:mitsuhiko/minijinja" = "latest"
-"github:siderolabs/talos"= { version = "1.13.3", bin = "talosctl", asset_pattern = "talosctl-darwin-arm64" }
+"github:siderolabs/talos"= { version = "1.13.4", bin = "talosctl", asset_pattern = "talosctl-darwin-arm64" }
 "github:budimanjojo/talhelper" = { version = "3.1.11", bin = "talhelper" }
 "github:score-spec/score-compose" = "latest"
 "github:score-spec/score-k8s" = "latest"
