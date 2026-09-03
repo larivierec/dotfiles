@@ -3,7 +3,7 @@
 go = "1.27.1"
 nodejs = '24'
 python = "3.14.7"
-rust = "1.98.0"
+rust = "1.98.1"
 terraform = "1.16.1"
 kubectl = "1.37.0"
 kubectx = "latest"
@@ -14,7 +14,7 @@ helmfile = "latest"
 flux2 = "latest"
 k9s = "latest"
 "github:mitsuhiko/minijinja" = "latest"
-"github:siderolabs/talos"= { version = "1.14.0-rc.2", bin = "talosctl", asset_pattern = "talosctl-darwin-arm64" }
+"github:siderolabs/talos"= { version = "1.14.0", bin = "talosctl", asset_pattern = "talosctl-darwin-arm64" }
 "github:mirceanton/talstomize" = { version = "0.1.0-rc.1", bin = "talstomize", asset_pattern = "talstomize_darwin_arm64.tar.gz" }
 "github:score-spec/score-compose" = "latest"
 "github:score-spec/score-k8s" = "latest"
