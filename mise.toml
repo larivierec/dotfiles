@@ -2,7 +2,7 @@
 
 go = "1.27.1"
 nodejs = '24'
-python = "3.14.7"
+python = "3.14.8"
 rust = "1.99.0"
 terraform = "1.16.4"
 kubectl = "1.37.1"
