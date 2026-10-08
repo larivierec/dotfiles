@@ -1,6 +1,6 @@
 [tools]
 
-go = "1.27.1"
+go = "1.27.2"
 nodejs = '24'
 python = "3.14.8"
 rust = "1.99.0"
