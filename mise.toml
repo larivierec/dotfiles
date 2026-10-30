@@ -14,7 +14,7 @@ helmfile = "latest"
 flux2 = "latest"
 k9s = "latest"
 "github:mitsuhiko/minijinja" = "latest"
-"github:mirceanton/talstomize" = { version = "v1.0.2", bin = "talstomize", asset_pattern = "talstomize_darwin_arm64.tar.gz" }
+"github:mirceanton/talstomize" = { version = "v1.0.3", bin = "talstomize", asset_pattern = "talstomize_darwin_arm64.tar.gz" }
 "github:siderolabs/talos"= { version = "1.14.5", bin = "talosctl", asset_pattern = "talosctl-darwin-arm64" }
 "github:score-spec/score-compose" = "latest"
 "github:score-spec/score-k8s" = "latest"
